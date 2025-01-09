@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const authRoutes = require("./user.routes");
-const movieRoutes = require("./movie.routes");
-const favoriteRoutes = require("./favorite.routes");
+const postRoutes = require("./post.routes");
+const likeRoutes = require("./like.routes");
 const formatResponse = require("../utils/formatResponse");
 
 router
   .use("/auth", authRoutes)
-  .use("/movies", movieRoutes)
-  .use("/favorites", favoriteRoutes);
+  .use("/posts", postRoutes)
+  .use("/likes", likeRoutes);
 
 router.use("*", (req, res) => {
   res
