@@ -19,11 +19,14 @@ module.exports = {
           model: "Users",
           key: "id",
         },
-        onDelete: 'CASCADE', 
+        onDelete: "CASCADE",
       },
       likeCount: {
         type: Sequelize.INTEGER,
         defaultValue: 0,
+      },
+      image: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,

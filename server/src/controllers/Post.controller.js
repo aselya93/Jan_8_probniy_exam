@@ -52,10 +52,15 @@ class PostController {
         .status(400)
         .json(formatResponse(400, "Validation error", null, error));
     }
+
     try {
+          // Проверяем, было ли загружено изображение
+    const image = req.file ? `/uploads/${req.file.filename}` : null;
+
       const newPost = await PostService.create({
         content,
         user_id: user.id,
+        image,
       });
       if (!newPost) {
         return res
@@ -75,7 +80,7 @@ class PostController {
     const { id } = req.params;
     const { user } = res.locals;
     const { content } = req.body;
-    if (isValidId(id)) {
+    if (!isValidId(id)) {
       return res.status(400).json(formatResponse(400, "Invalid Post ID"));
     }
     //! Проверка наличия необходимых данных - Используем MovieValidator (обработка негативного кейса)
@@ -115,7 +120,7 @@ class PostController {
 
   static async deletePost(req, res) {
     const { id } = req.params;
-    const { user } = user.locals;
+    const { user } = res.locals;
     if (!isValidId(id)) {
       return res.status(400).json(formatResponse(400, "Invalid Post ID"));
     }

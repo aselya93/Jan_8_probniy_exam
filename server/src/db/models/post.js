@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       content: DataTypes.STRING,
       userId: DataTypes.INTEGER,
       likeCount: DataTypes.INTEGER,
+      image: DataTypes.STRING,
     },
     {
       sequelize,
