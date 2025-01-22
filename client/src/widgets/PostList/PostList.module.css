@@ -1,0 +1,49 @@
+/* PostList.css */
+
+.postList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #15202b; /* Темный фон, как в Twitter */
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.postCard {
+  background-color: #192734; /* Темный фон для карточек */
+  border: 1px solid #38444d; /* Граница карточки */
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.postCard p {
+  font-size: 16px;
+  color: #e7e9ea; /* Мягкий белый/светло-серый цвет для текста */
+  margin: 0;
+}
+
+.postCard .postActions {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.postCard .postActions button {
+  background: none;
+  border: none;
+  color: #8899a6; /* Серый цвет для кнопок */
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.postCard .postActions button:hover {
+  color: #1da1f2; /* Синий цвет при наведении */
+}
+
+.noTweets {
+  text-align: center;
+  font-size: 14px;
+  color: #8899a6; /* Серый цвет для текста */
+  margin-top: 20px;
+}

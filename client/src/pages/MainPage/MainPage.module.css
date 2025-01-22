@@ -1,0 +1,121 @@
+/* MainPage.module.css */
+
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #15202b, #1c2a3a); /* Градиентный фон */
+    color: #ffffff; /* Белый текст */
+    padding: 20px;
+  }
+  
+  .heroSection {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 60px;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #8899a6; /* Серый текст */
+    margin-bottom: 32px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .authButtons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .ctaButton {
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+ /* MainPage.module.css */
+
+.ctaButton.ant-btn-primary {
+    background: linear-gradient(135deg, #9b51e0, #bb6bd9); /* Фиолетовый градиент */ /* Градиентный фон */
+    border: none;
+    color: #ffffff; /* Белый текст */
+    font-weight: 500; /* Полужирный текст */
+    box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3); /* Тень */
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  }
+  
+  .ctaButton.ant-btn-primary:hover {
+    background: linear-gradient(135deg, #9b51e0, #bb6bd9);  /* Инвертированный градиент при наведении */
+    transform: translateY(-2px); /* Эффект поднятия */
+    box-shadow: 0 6px 16px rgba(29, 161, 242, 0.4); /* Увеличенная тень */
+  }
+  
+  .ctaButton.ant-btn-default {
+    background-color: transparent;
+    border: 1px solid #1da1f2; /* Голубая граница */
+    color: #1da1f2; /* Голубой текст */
+  }
+  
+  .ctaButton.ant-btn-default:hover {
+    background-color: #1da1f2; /* Голубой фон при наведении */
+    color: #ffffff; /* Белый текст при наведении */
+    transform: translateY(-2px); /* Эффект поднятия */
+    box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3); /* Тень */
+  }
+  
+  .ctaButton.ant-btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
+  }
+  .featuresSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .featureCard {
+    background-color: #1c2a3a; /* Темный фон для карточек */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Тень */
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .featureCard:hover {
+    transform: translateY(-5px); /* Эффект поднятия */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
+  }
+  
+  .featureCard h2 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .featureCard p {
+    font-size: 1rem;
+    color: #8899a6; /* Серый текст */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
