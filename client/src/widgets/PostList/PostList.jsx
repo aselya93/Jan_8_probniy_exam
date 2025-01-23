@@ -1,7 +1,7 @@
 import { message as antMessage } from "antd";
 import { useState } from "react";
 import PostApi from "../../entities/post/PostApi";
-import styles from './PostList.module.css'
+import styles from "./PostList.module.css";
 
 function PostList({ posts, setPosts }) {
   // const navigate = useNavigate();

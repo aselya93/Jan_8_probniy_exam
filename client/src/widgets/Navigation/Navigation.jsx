@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import { message as antMessage, Button } from "antd";
 import UserApi from "../../entities/user/UserApi";
 import { setAccessToken } from "../../shared/lib/axiosInstance";
@@ -10,8 +10,9 @@ import logoutIcon from "../../assets/icons//icon-logout.png";
 import mainIcon from "../../assets/icons/icon-group.png";
 import tweetIcon from "../../assets/icons/free-icon-twitter-4401446.png";
 
-function Navigation({ user, setUser }) {
+function Navigation({ user, setUser}) {
   const navigate = useNavigate();
+  const {userId} = useParams()
 
   const signOutHandler = async () => {
     try {
@@ -53,7 +54,7 @@ function Navigation({ user, setUser }) {
                 <img src={mainIcon} alt="Home" className={styles.navIcon} />
               </Link>
 
-              <Link to={`/posts/${user.id}`} className={styles.navLink}>
+              <Link to={`/posts/user/${userId}`} className={styles.navLink}>
                 <img
                   src={profileIcon}
                   alt="Profile"

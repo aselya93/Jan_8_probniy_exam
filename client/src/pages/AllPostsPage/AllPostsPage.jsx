@@ -3,6 +3,7 @@ import { message as antMessage } from "antd";
 import PostApi from "../../entities/post/PostApi";
 import PostList from "../../widgets/PostList/PostList";
 import styles from "./AllPostsPage.module.css";
+import UserSidebar from "../../widgets/UserSidebar/UserSidebar";
 
 function AllPostsPage({ user }) {
   const [loading, setloading] = useState(false);
@@ -35,8 +36,11 @@ function AllPostsPage({ user }) {
 
   return (
     <div className={styles.postsPage}>
-      {loading && <h5>Загрузка...</h5>}
-      <PostList posts={posts} setPosts={setPosts} />
+      <UserSidebar user={user} />
+      <div className={styles.postsContainer}>
+        {loading && <h5>Загрузка...</h5>}
+        <PostList posts={posts} setPosts={setPosts} />
+      </div>
     </div>
   );
 }

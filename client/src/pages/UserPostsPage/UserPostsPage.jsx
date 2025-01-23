@@ -1,10 +1,12 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import UserPosts from '../../widgets/UserPosts/UserPosts';
 
-function UserPostsPage(props) {
+function UserPostsPage({user}) {
     return (
         <div>
-            <UserPosts />
+            <UserPosts  user={user}/>
         </div>
     );
 }

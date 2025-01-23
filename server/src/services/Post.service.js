@@ -8,6 +8,13 @@ class PostService {
     });
   }
 
+  static async getAllPostsByUserId(userId) {
+    return await Post.findAll({
+      where: { userId},
+      include: [{ model: User}],
+    });
+  }
+
   static async create(data) {
     const newPost = await Post.create(data);
     return await this.getById(newPost.id);

@@ -1,34 +1,20 @@
-/* PostsPage.css */
+/* AllPostsPage.module.css */
 
-.postCard {
-  background-color: #192734; /* Темный фон для карточек */
-  border: 1px solid #38444d; /* Граница карточки */
-  border-radius: 12px;
+.postsPage {
+  display: flex; /* Включаем flexbox */
+  gap: 16px; /* Расстояние между UserSidebar и PostList */
   padding: 16px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #15202b; /* Темный фон, как в Twitter */
+  min-height: 100vh;
 }
 
-.postCard p {
-  font-size: 16px;
-  color: #ffffff; /* Белый текст */
-  margin: 0;
+.sidebar {
+  width: 300px; /* Ширина UserSidebar */
+  flex-shrink: 0; /* Запрещаем сжатие */
 }
 
-.postCard .postActions {
-  margin-top: 12px;
-  display: flex;
-  gap: 12px;
-}
-
-.postCard .postActions button {
-  background: none;
-  border: none;
-  color: #8899a6; /* Серый цвет для кнопок */
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.postCard .postActions button:hover {
-  color: #1da1f2; /* Синий цвет при наведении */
+.postsContainer {
+  flex-grow: 1; /* PostList занимает оставшееся пространство */
+  max-width: 800px; /* Ограничиваем ширину ленты */
+  margin: 0 auto; /* Центрируем ленту */
 }

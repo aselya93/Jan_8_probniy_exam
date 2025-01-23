@@ -1,0 +1,28 @@
+/* UserSidebar.module.css */
+
+.sidebar {
+    width: 250px; /* Фиксированная ширина */
+    padding: 16px;
+    background-color: #192734; /* Темный фон */
+    border-radius: 12px;
+    border: 1px solid #38444d; /* Граница */
+  }
+.userInfo {
+    margin-bottom: 16px;
+}
+
+.trendingTopics,
+.whoToFollow {
+    margin-bottom: 16px;
+}
+
+.antCard {
+    margin-bottom: 16px;
+}
+
+.antListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}

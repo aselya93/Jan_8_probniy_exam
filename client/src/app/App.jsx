@@ -14,8 +14,10 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    UserApi.refreshTokens()
-      .then(({ error, data, statusCode }) => {
+    const refreshTokens = async () => {
+      try {
+        const { error, data, statusCode } = await UserApi.refreshTokens();
+        console.log("refreshTokens response:", { error, data, statusCode });
         if (error) {
           setUser(null);
           return;
@@ -24,10 +26,13 @@ function App() {
           setAccessToken(data.accessToken);
           setUser(data.user);
         }
-      })
-      .catch(({ message }) => {
-        console.log(message);
-      });
+      } catch (error) {
+        console.log(error.message);
+        setUser(null);
+      }
+    };
+
+    refreshTokens();
   }, []);
 
   const router = createBrowserRouter([
@@ -35,9 +40,9 @@ function App() {
       path: "/",
       element: <Navigation user={user} setUser={setUser} />,
       children: [
-        { path: "/", element: <MainPage user={user} /> },
+        { path: "/", element: <MainPage user={user} setUser={setUser} /> },
         { path: "/signup", element: <SignUpPage setUser={setUser} /> },
-        { path: "/signin", element: <SignInPage asetUser={setUser} /> },
+        { path: "/signin", element: <SignInPage setUser={setUser} /> },
         {
           path: "/posts",
           element: user ? (
@@ -46,7 +51,7 @@ function App() {
             <SignInPage setUser={setUser} />
           ),
         },
-        { path: "/posts/:id", element: <UserPostsPage user={user} /> },
+        { path: '/posts/user/:userId', element: <UserPostsPage /> },
         { path: "*", element: <NotFoundPage /> },
       ],
     },

@@ -28,6 +28,15 @@ export default class PostApi {
     }
   }
 
+  static async getAllPostByUserId(userId) {
+    try {
+      const { data } = await axiosInstance.get(`/posts/user/${userId}`);
+      return data;
+    } catch (error) {
+      return error.response.data;
+    }
+  }
+
   static async deletePost(id) {
     try {
       const { data } = await axiosInstance.delete(`/posts/${id}`);

@@ -7,6 +7,7 @@ router
   .get("/", verifyAccessToken, PostController.getAllPosts)
 
   .get("/:id", verifyAccessToken, PostController.getPostById)
+  .get("/user/:userId", verifyAccessToken, PostController.getAllPostByUserId)
 
   .post(
     "/",

@@ -1,4 +1,4 @@
-/* PostList.css */
+/* PostList.module.css */
 
 .postList {
   display: flex;
@@ -7,6 +7,8 @@
   background-color: #15202b; /* Темный фон, как в Twitter */
   padding: 16px;
   border-radius: 12px;
+  max-width: 800px; /* Ограничиваем ширину ленты */
+  margin: 0 auto; /* Центрируем ленту */
 }
 
 .postCard {

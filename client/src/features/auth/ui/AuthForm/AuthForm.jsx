@@ -19,6 +19,7 @@ export default function AuthForm({ type, setUser }) {
   const changeHandler = ({ target }) => {
     setInputs((prev) => ({ ...prev, [target.name]: target.value }));
   };
+
   async function submitHandler(e) {
     e.preventDefault();
     const { email, password, username } = inputs;
@@ -114,8 +115,6 @@ export default function AuthForm({ type, setUser }) {
           value={inputs.password}
           placeholder="password"
           required
-          autoFocus
-      
         />
         {type === "signup" && (
           <input

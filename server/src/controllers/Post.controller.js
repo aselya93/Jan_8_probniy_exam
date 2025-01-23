@@ -39,6 +39,27 @@ class PostController {
     }
   }
 
+  static async getAllPostByUserId(req, res) {
+    try {
+      const { userId } = req.params;
+      if (!isValidId(userId)) {
+        return res.status(400).json(formatResponse(400, "Invalid User ID"));
+      }
+      const posts = await PostService.getAllPostsByUserId(userId);
+      if (posts.length === 0) {
+        return res
+          .status(200)
+          .json(formatResponse(200, `Posts not found`));
+      }
+      res.status(200).json(formatResponse(200, "success", posts));
+    } catch ({ message }) {
+      res
+        .status(500)
+        .json(formatResponse(500, "Internal server error", null, message));
+    }
+  }
+
+
   static async createPost(req, res) {
     const { content } = req.body;
     const { user } = res.locals;
